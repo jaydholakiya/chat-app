@@ -9,9 +9,6 @@ import { ApiCalls } from './services/apicalls.service';
 import { DashboardComponent } from './after-auth/dashboard/dashboard.component';
 import { RegistrationComponent } from './pre-auth/registration/registration.component';
 import { AuthGuard } from './services/authService.service';
-// import { NgHttpLoaderModule } from 'ng-http-loader'; 
-// import { NgHttpLoaderModule } from 'ng-http-loader';
-import * as $ from 'jquery';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { SecurePage } from './services/protected.service';
 import { ChatComponent } from './after-auth/chat/chat.component';
@@ -36,14 +33,13 @@ import { HeaderComponent } from './after-auth/header/header.component';
     BrowserModule,
     ReactiveFormsModule,
     NgxUiLoaderModule,
-    // NgHttpLoaderModule.forRoot(),
-    // NgHttpLoaderModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
   ],
   providers: [ApiCalls,
     AuthGuard,
-    SecurePage],
+    SecurePage
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

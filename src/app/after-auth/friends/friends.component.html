@@ -1,16 +1,18 @@
 <app-header></app-header>
-<table>
-    <tr *ngIf="datas.length!==0 else norequest">
-    <th>name</th>
-    <th>emailid</th>
+<table *ngIf="datas.length!==0 else nofriends">
+    <tr>
+        <th>name</th>
+        <th>emailid</th>
         <th></th>
-</tr>
-<tr *ngFor="let data of datas">
-<td>{{data.name}}</td>
-<td>{{data.email}}</td>
-<td><button class="btn btn-danger" (click)="removefriend(data.uid)">Remove Friend</button></td>
+    </tr>
+    
+    <tr *ngFor="let data of datas">
+    <td>{{data.name}}</td>
+    <td>{{data.email}}</td>
+<td>
+    <button class="btn btn-danger" (click)="removefriend(data.uid)">Remove Friend</button></td>
 </tr>
 </table>
-<ng-template  #norequest>
+<ng-template #nofriends>
     <h1>No Friends</h1>
 </ng-template>

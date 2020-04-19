@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { appinfo } from '../../environments/environment';
+
 @Injectable()
+
 export class ApiCalls {
   readonly baseurl = 'http://localhost:8000/';
   constructor(private https: HttpClient) {}
+  
   login(emp: any) {
     return this.https.post(this.baseurl + appinfo.info.login, emp);
   }

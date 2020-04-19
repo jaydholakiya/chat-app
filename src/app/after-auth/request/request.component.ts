@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as io from 'socket.io-client';
 import { ApiCalls } from '../../services/apicalls.service';
+
 @Component({
   selector: 'app-request',
   templateUrl: './request.component.html',
   styleUrls: ['./request.component.scss'],
 })
+
 export class RequestComponent implements OnInit {
   localdata: any;
   objectofid: any;

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
+
 export class RegistrationComponent implements OnInit {
   profileForm: FormGroup;
   new: any;
@@ -46,6 +47,7 @@ export class RegistrationComponent implements OnInit {
       cpassword: [ null, [Validators.required, Validators.compose([CustomValidators.matchValues('password'),      ])]]
     });
   }
+
   onSubmit(event) {
     this.fd.append('uploadfile', this.selectedFile, this.selectedFile.name);
     this.fd.append('displayName', this.profileForm.value.username);
@@ -63,6 +65,7 @@ export class RegistrationComponent implements OnInit {
       }
       });
   }
+
   onlogin() {
     this.routes.navigate(['/login']);
   }

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCalls } from '../../services/apicalls.service';
 import * as io from 'socket.io-client';
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
   styleUrls: ['./friends.component.scss']
 })
+
 export class FriendsComponent implements OnInit {
   localdata: any;
   objectofid: { id: any; };
@@ -39,15 +41,13 @@ export class FriendsComponent implements OnInit {
       console.log(res);
       // tslint:disable-next-line: quotemark
       if (res === "sorry you don't have friends") {
-
+        console.log('No friends.');
       } else {
-      // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < res.length; i++) {
-      this.datas.push(res[i]);
-    }
+        this.datas.push(res[i]);
+      }
   }
     });
-    // console.log(this.datas)
   }
 
   /**

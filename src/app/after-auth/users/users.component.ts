@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentChecked, AfterContentInit, AfterViewInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiCalls } from '../../services/apicalls.service';
 import * as io from 'socket.io-client';
 import * as $ from 'jquery';
@@ -24,10 +24,10 @@ export class UsersComponent implements OnInit {
     this.uid = {uid: this.localdata.uid };
     const local = JSON.parse(localStorage.getItem('accessToken'));
 
-
     /**
      * api for get all users if already friend then dont splice it
      */
+
     this.api.getallusers(this.uid).subscribe((data: any) => {
       console.log(data);
       const getname = data.findIndex(data => data.id === local.uid);
@@ -51,6 +51,7 @@ export class UsersComponent implements OnInit {
      }, 1000);
       }
    });
+   
     const socket = io('http://localhost:8000');
     socket.emit('startconnnection', { connencted: this.localdata.uid });
     socket.on('newbutton', data => {
@@ -67,7 +68,8 @@ export class UsersComponent implements OnInit {
   /**
    * request send fucntion
    * @param id to whom the request is to be send
-   */
+  */
+
   requestsend(id) {
     const socket = io('http://localhost:8000');
     socket.emit('request', {

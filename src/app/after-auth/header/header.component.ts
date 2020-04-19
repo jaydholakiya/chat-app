@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as io from 'socket.io-client';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   localdata: any;
   displayname: any;
@@ -33,6 +35,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('accessToken');
     this.routes.navigate(['/login']);
   }
+
   openNav(){
     this.routes.navigate(['/dashboard']);
   }

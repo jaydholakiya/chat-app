@@ -1,7 +1,7 @@
 const express = require('express');
 const admin = require('firebase-admin')
 var firebase = require('firebase-admin');
-var key = require('./key')
+var key = require('./key.json')
 firebase.initializeApp(key);
 const db = admin.firestore();
 const bodyparser = require('body-parser');
@@ -74,23 +74,26 @@ app.post('/registration', (req, res) => {
       password: req.body.password,
       filename: req.file.filename,
     });
+    
     firebas.auth().createUserWithEmailAndPassword(emp.Emailid, emp.password).then(data => {
 
-      db.collection('users').add(emp).then(() => {
+      return db.collection('users').add(emp).then(() => {
         console.log("oh yeh")
-        firebas.auth().currentUser.getIdToken().then(function (idToken) {
+        // return firebas.auth().currentUser.getIdToken().then(function (idToken) {
           console.log(idToken)
           res.json({
             message: "successfully resgisterd"
           })
-        }).catch(function (error) {
+        // })
+        .catch(function (error) {
           console.log(error)
         });
       }).catch(err => {
         console.log("oh no")
         console.log(err);
       })
-    }).catch(err => {
+    })
+    .catch(err => {
       if (err.message == "The email address is already in use by another account.") {
         res.json({
           message: "already exist"
@@ -492,9 +495,8 @@ app.post('/login', (req, res) => {
   console.log(req.body.Emailid);
   firebas.auth().signInWithEmailAndPassword(req.body.Emailid, req.body.password).then((result) => {
     console.log(result.user.uid)
-    result.user.getIdToken().then(token => {
-      console.log(token)
-      db.collection("users").where("Emailid", "==", req.body.Emailid)
+    // result.user.getIdToken().then(token => {
+      return db.collection("users").where("Emailid", "==", req.body.Emailid)
         .get()
         .then(function (querySnapshot) {
           console.log(querySnapshot.docs)
@@ -519,7 +521,7 @@ app.post('/login', (req, res) => {
         }).catch(err => {
           console.log(err)
         });
-    })
+    // })
   }).catch(err => {
     if (err.message == "There is no user record corresponding to this identifier. The user may have been deleted.") {
       res.send({
@@ -681,7 +683,4 @@ app.post('/getmessages', (req, res) => {
     res.send(arrayofmessage);
   })
 })
-
-
-
-http.listen(8000, () => console.log('serverstarte on : 8000'));
+http.listen(8000, () => console.log('server started on : 8000'));

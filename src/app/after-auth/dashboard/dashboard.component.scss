@@ -1,5 +1,3 @@
-
-  
   .allcomponent{
     margin-top: 30px !important;
     width: 80%;
@@ -25,11 +23,8 @@
 
 .card-body {
   transform-style: preserve-3d;
-  // padding:100px;
   margin: 4%;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  
-  // border:2px solid black;
+  background: linear-gradient(-135deg, #e7883b, #636266);
   border-radius: 10%;
   transition: 1s;
   height:250px; 
@@ -42,102 +37,50 @@
 .card-front, .card-back {
   backface-visibility: hidden;
 }
+
 .card-front{
   margin-top:32%;
   transform: translateZ(30);
 }
+
 .card-back {
   position: absolute;
-  // top: 0; right: 0; bottom: 0; left: 0;
-  transform: rotateY(-180deg);
-  
+  transform: rotateY(-180deg); 
 }
+
 .card-chat-back{
   background-image: url(../../../assets/images/icons/4.png);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center;
   background-size: 100% 100%;
 }
 .card-account-back{
   background-image: url(../../../assets/images/icons/9.png);
   background-repeat: no-repeat;
-  // background-size: cover;
-  // background-color: black;
   background-position: center;
   background-size: 100% 100%;
 }
 .card-friend-back{
   background-image: url(../../../assets/images/icons/3.jpg);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center;
   background-size: 100% 100%;
 }
 .card-users-back{
   background-image: url(../../../assets/images/icons/10.png);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center;
   background-size: 100% 100%;
 }
 .card-quesry-back{
   background-image: url(../../../assets/images/icons/11.png);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center;
   background-size: 100% 100%;
 }
 .card-request-back{
   background-image: url(../../../assets/images/icons/12.png);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center;
   background-size: 100% 100%;
 }
-/* Make it Pretty */
-
-// .cards {
-//   grid-gap: 1.5rem;
-//   padding: 3rem;
-//   background: whitesmoke;
-//   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-// }
-
-// .card {
-//   display: flex;
-//   transition: transform calc(var(--time) / 4);
-//   text-decoration: none;
-//   color: inherit;
-  
-//   &:active {
-//     transform: scale(0.975);
-//   }
-// }
-
-// .card-body {
-//   border-radius: 0.25rem;
-//   flex: 1;
-// }
-
-// .card-front, .card-back {
-//   @extend .shadow;
-//   display: flex;
-//   align-items: center;
-//   background-color: white;
-//   box-sizing: border-box;
-//   padding: 1.5rem;
-//   border-radius: 0.25rem;
-// }
-
-// .card-front {
-//   font-size: 1.5rem;
-// }
-
-// .shadow {
-//   box-shadow: 0 -1px 1px rgba(0,0,0,0.04), 
-//               0 2px 2px rgba(0,0,0,0.04), 
-//               0 4px 4px rgba(0,0,0,0.04), 
-//               0 8px 8px rgba(0,0,0,0.04),
-//               0 16px 16px rgba(0,0,0,0.04); 
-// }

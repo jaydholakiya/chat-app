@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
-$green: #86BB71;
-$blue: #94C2ED;
-$orange: #E38968;
-$gray: #92959E;
+$green: rgb(98, 165, 72);
+$blue: rgb(123, 158, 190);
+$orange: rgb(223, 150, 123);
+$gray: rgb(106, 111, 126);
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -17,15 +17,12 @@ body {
 }
 
 .container1 {
-//   margin: 0 auto;
   width: 30%;
   background: #444753;
   border-radius: 5px;
   height: 90vh;
   display: inline-block;
   overflow: scroll;
-  // overflow-x: scroll;
-//   overflow-y:hidden;
 }
 .newtext{
   width: 80%;
@@ -34,8 +31,7 @@ body {
 }
 .people-list {
   width:100%;
-//   float: left;
-padding-left: 0px !important;
+  padding-left: 0px !important;
   margin-left: 0px !important;
   .search {
     padding: 20px;
@@ -59,10 +55,7 @@ padding-left: 0px !important;
   ul {
     padding: 20px;
     height: 100%;
- 
-    
-    
-    
+
     li {
       padding-bottom: 20px;
     }
@@ -89,22 +82,16 @@ padding-left: 0px !important;
 
 .chat {
   width: 70%;
-//   margin-top: 12px;
-height: 88vh;
-// overflow: scroll;
+  height: 88vh;
   padding: 10px;
   float:right;
-//   position: absolute;
   background: #F2F5F8;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-//   height:100px !important;
-// margin-left:40px;
   color: #434651;
   
   .chat-header {
-    // padding: 20px;
-    border-bottom: 2px solid white;
+  border-bottom: 2px solid white;
     
     img {
       float: left;
@@ -124,7 +111,7 @@ height: 88vh;
     .chat-num-messages {
       color: $gray;
     }
-    
+
     .fa-star {
       float: right;
       color: #D8DADF;
@@ -144,7 +131,6 @@ height: 88vh;
     }
     
     .message-data-time {
-      // color: lighten($gray, 8%);
       padding-left: 6px;
     }
     
@@ -189,7 +175,6 @@ height: 88vh;
   }
   
   .chat-message {
-    // padding: 30px;
     
     textarea {
       width: 100%;
@@ -199,7 +184,6 @@ height: 88vh;
       margin-bottom: 10px;
       border-radius: 5px;
       resize: none;
-      
     }
     
     .fa-file-o, .fa-file-image-o {
@@ -275,7 +259,6 @@ img{
   height: 10px;
   width: 10px;
   color: white !important;
-  // display: inline-block;
   float: right;
   margin-top: 15px;
 }

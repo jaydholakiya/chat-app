@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCalls } from '../../services/apicalls.service';
 import * as io from 'socket.io-client';
-import { isNullOrUndefined } from 'util';
 declare const $: any;
 @Component({
   selector: 'app-chat',
@@ -101,6 +100,7 @@ export class ChatComponent implements OnInit {
    * @param name name of the friend
    * @param image image of the friend
    */
+  
   changecomponent(id, name, image) {
     const socket = io('http://localhost:8000');
 
@@ -160,27 +160,6 @@ export class ChatComponent implements OnInit {
       this.currentroom = data;
       console.log(this.currentroom);
       console.log(this.newmessagearray);
-
-      /**
-       * under construction the message read or not functionality
-       */
-
-      // setTimeout(() => {
-      //   for (const abc of this.newmessagearray) {
-      //     // console.log(this.localdata.)
-      //     if (abc.to === this.localdata.uid && abc.room === this.currentroom) {
-      //       console.log(abc);
-      //       if (abc.room === data) {
-      //         abc.status = 'read';
-      //       }
-      //       console.log(abc.status);
-      //       this.arrayofmessage.push(abc);
-      //     }
-      //   }
-      //   // socket.emit('joinedroom' , data =>{
-      //   // })
-      // }, 3000);
-
     });
 
     socket.on('welcome message', (data) => {

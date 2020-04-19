@@ -1,15 +1,7 @@
-
-
-<!-- <div class="container"></div> -->
-
 <app-header></app-header>
 
   <div class="container1 clearfix">
     <div class="people-list" id="people-list">
-      <!-- <div class="search">
-        <input type="text" placeholder="search" />
-        <i class="fa fa-search"></i>
-      </div> -->
     <div *ngIf='!(datas.length === 0); else new'>
       <ul class="list" *ngFor='let data of datas'>
         <li class="clearfix" (click)="changecomponent(data.uid,data.name,data.image)">
@@ -20,10 +12,6 @@
             <div class="status" *ngIf='data.uid===n.user'>
               <i class="fa fa-circle online inline"></i>Online
             </div>
-            <!-- <div class="status">
-              <i class="fa fa-circle online inline"  *ngIf='data.uid===n.user' ></i> <div class="inline" *ngIf='data.uid===n.user'>Online</div>
-              <i class="fa fa-circle offline"></i> offline
-            </div> -->
           </div>
           </div>
         </li>
@@ -33,16 +21,13 @@
     </div>
   </div>
 
-  <div class="chat" *ngIf='chatname'>
-    <!-- <app-chat-message></app-chat-message> -->
-
-  
+  <div class="chat" *ngIf='chatname'>  
     <div class="chat-header clearfix">
       <img src="http://localhost:8000/images/{{img}}" alt="avatar" />
       
       <div class="chat-about">
         <div class="chat-with">{{chatname}}</div>
-        <div *ngIf="typing==='typing'">typing....</div>
+        <div *ngIf="typing==='typing'">typing</div>
         <div *ngIf="typing==='stop typing'"></div>
       </div>
     </div>
@@ -53,10 +38,10 @@
         <li class="clearfix" *ngIf='message.sendbyuid===localdata.uid && message.room===currentroom'>
           <div class="message-data align-right">
             <span class="message-data-time" >{{message.date}}</span> &nbsp;
-            <span class="message-data-name" >{{message.sendby}}</span> 
+            <span class="message-data-name" >{{message.sendby}}</span>
           </div>
           <div class="message other-message float-right">
-           {{message.message}}
+            {{message.message}}
            <img src="../../../assets/images/check-double-solid.svg" class="svg" *ngIf="message.status==='delivered'">
           <img src="../../../assets/images/check-square-solid.svg" class="svg" *ngIf="message.status==='read'"> 
            <img src="../../../assets/images/check-solid.svg" class="svg" *ngIf="message.status==='not delivered'">
@@ -78,9 +63,6 @@
     
     <div class="chat-message clearfix">
       <textarea #textarea name="message-to-send" #messagevalue id="message-to-send" placeholder ="Type your message" rows="2" (keyup)="myFunction(textarea)"></textarea>
-              
-      <!-- <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp; -->
-      <!-- <i class="fa fa-file-image-o"></i> -->
       
       <button (click)="messagesend(messagevalue)">Send</button>
     </div> <!-- end chat-message -->
