@@ -1,3 +1,5 @@
+Add your key.json file from your firebase in back-end folder.
+
 # Chatapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
